@@ -15,8 +15,12 @@ import {StyledTetrisWrapper,StyledTetris} from './styles/StyledTetris.js';
 
 
 const Tetris = () => {
+   
+    const[droptime,setDropTime] = useState(null);
+    const[gameOver,setGameOver] = useState(false);
 
-
+    const[player] = usePlayer();
+    const[stage,setStage] = useStage(player);
  console.log('re-render');
 
 return(
