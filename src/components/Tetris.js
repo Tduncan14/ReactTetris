@@ -25,8 +25,8 @@ const Tetris = () => {
  console.log('re-render');
 
  const movePlayer = dir  => {
-    updatePlayerPos({x:dir, y:0})
 
+ 
 
  }
 
@@ -47,25 +47,21 @@ const Tetris = () => {
 
  }
 
- const move = ({keyCode}) =>{
-   if(!gameOver){
-      if(keyCode === 37){
-
-        movePlayer(-1)
-      }
-      else if(keyCode === 39){
-          movePlayer(1);
-      }
-      else if(keyCode === 40){
-          dropPlayer();
-      }
-
-   }
-
- }
-
+ const move = ({ keyCode }) => {
+  if (!gameOver) {
+    if (keyCode === 37) {
+      movePlayer(-1);
+    } else if (keyCode === 39) {
+      movePlayer(1);
+    } else if (keyCode === 40) {
+      dropPlayer();
+    } else if (keyCode === 38) {
+     
+    }
+  }
+};
 return(
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDow={e => move(e)}>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
      <StyledTetris>
         <Stage stage={stage}/>
         <aside>
